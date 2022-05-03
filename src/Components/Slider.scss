@@ -1,0 +1,97 @@
+.slider-container {
+    height          : 100vh;
+    background-color: coral;
+    position        : relative;
+    display         : flex;
+    overflow        : hidden;
+
+    .slider-arrow {
+        display        : flex;
+        align-items    : center;
+        justify-content: center;
+        position       : absolute;
+        top            : 0;
+        bottom         : 0;
+        margin         : auto;
+        z-index        : 3;
+
+        .arrow {
+            width           : 40px;
+            height          : 40px;
+            border-radius   : 50%;
+            background-color: lightgray;
+            opacity         : 50%;
+            display         : flex;
+            justify-content : center;
+            align-items     : center;
+            cursor          : pointer;
+        }
+
+        .arrow-left {
+            position: absolute;
+            left    : 10px;
+        }
+
+        .arrow-right {
+            position: absolute;
+            left    : calc(100vw - 50px);
+        }
+    }
+
+    .slide-wrapper {
+        height    : 100%;
+        width     : 100vw;
+        display   : flex;
+        transition: all 1.5s ease;
+
+        .slide {
+            width      : 100vw;
+            height     : 100vh;
+            display    : flex;
+            align-items: center;
+
+            .img-container {
+                flex  : 1;
+                width : 100%;
+                height: 100%;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .text-container {
+                width        : 100vh;
+                // border    : 1px solid;
+                flex         : 1;
+                text-align   : left;
+                padding      : 50px;
+
+                .text-title {
+                    font-size  : 70px;
+                    font-weight: bolder;
+                }
+
+                .text-desc {
+                    font-size     : 20px;
+                    letter-spacing: 3px;
+                    font-weight   : 500;
+                    margin        : 50px 0;
+                }
+
+                button {
+                    padding         : 10px;
+                    font-size       : 20px;
+                    background-color: transparent;
+                    cursor          : pointer;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 428px) {
+    .slider-container {
+        display: none;
+    }
+}
